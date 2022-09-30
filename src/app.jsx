@@ -29,8 +29,8 @@ export default function App() {
         </Route>
   
         <Route path="auth" element={<Auth />}>
-          <Route index element={<AuthForm mode="signin" />} />
-          <Route path="signup" element={<AuthForm mode="signup" />} />
+          <Route index element={<AuthForm mode="signIn" />} />
+          <Route path="signUp" element={<AuthForm mode="signUp" />} />
         </Route>
   
         <Route path="*" element={<Navigate to="/" replace />} />
