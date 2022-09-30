@@ -1,0 +1,11 @@
+.nav {
+    background-color: gray;
+    display: flex;
+    gap: 20px;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    align-content: stretch;
+    flex-wrap: nowrap;
+
+}
