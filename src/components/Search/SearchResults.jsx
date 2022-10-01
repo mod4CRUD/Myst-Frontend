@@ -8,9 +8,9 @@ export default function SearchResults({ results, infinScrollRef }) {
     {results.map((result, i) => {
       const ref = i == results.length - 3 ? infinScrollRef : undefined;
       return <SearchResultCard 
-        key = {result._id}
-        pokemon = {result}
-        infinScrollRef = {ref}
+        key={result._id}
+        pokemon={result}
+        infinScrollRef={ref}
       />;
     })}
   </ul>;

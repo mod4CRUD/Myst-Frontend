@@ -1,10 +1,11 @@
 import React from 'react';
-import { InputControl, FormButton } from '../Forms/FormController.jsx';
+import { InputController, FormButton } from '../Forms/FormController.jsx';
 import useSearchForm from '../../hooks/use-search-form.js';
 
 
 export default function SearchForm({ onSubmit }) {
   const { pokemon, setPokemon, SearchForm, setSearchForm } = useSearchForm();
+  
   const formSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -12,8 +13,8 @@ export default function SearchForm({ onSubmit }) {
     onSubmit(formDataObject); 
   };
 
-  return <form onSubmit ={formSubmit}>
-    <InputControl
+  return (<form onSubmit ={formSubmit}>
+    <InputController
       type="text"
       name="pokemon"
       value={pokemon}
@@ -22,7 +23,7 @@ export default function SearchForm({ onSubmit }) {
     <FormButton type = "submit">
         Search
     </FormButton>
-  </form>;
+  </form>);
 
 
 }

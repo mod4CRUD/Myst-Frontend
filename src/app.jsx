@@ -13,6 +13,7 @@ import Sales from './components/Sales/Sales.jsx';
 import Users from './components/Users/Users.jsx';
 import Auth from './components/Auth/Auth.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
+import Search from './components/Search/Search.jsx';
   
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="users" element={<Users />} />
+          <Route path="search" element={<Search />}/>
           <Route path="sales" element={<Sales />}>
             <Route index element={<Deposits />} />
             <Route path="invoices" element={<Invoices />} />

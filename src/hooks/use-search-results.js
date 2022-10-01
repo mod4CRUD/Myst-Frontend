@@ -4,16 +4,17 @@ import { search } from '../services/pokedex';
 import { useInView } from 'react-intersection-observer';
 
 export default function useSearchResults() {
-  const [SearchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
+  
   const useableSearchParams = Object.fromEntries(searchParams.entries());
 
   const nextPage = async () => {
     useableSearchParams.page = parseInt(useableSearchParams.page) + 1;
     setSearchParams(useableSearchParams);
     const moreResults = await search(useableSearchParams);
-    setSearchResults(SearchResults.concat(moreResults.results));
+    setSearchResults(searchResults.concat(moreResults.results));
   };
 
   const infinScrollRef = useInView({
@@ -32,7 +33,8 @@ export default function useSearchResults() {
       const body = await search(searchObj);
       setSearchResults(body.results);
     } catch (e) {
-      setError('Error' + e.body.toString());
+      console.log(e);
+      setError('Error' + e.toString());
     }
   };
   useEffect(() => void searchPokedex(useableSearchParams), []);
@@ -40,10 +42,11 @@ export default function useSearchResults() {
   return {
     nextPage,
     searchParams,
-    SearchResults,
+    searchResults,
     setSearchResults,
     searchPokedex,
     infinScrollRef,
+    error,
   };
 
 }
