@@ -69,12 +69,12 @@ test('check box control', async () => {
   expect(checkBoxController.required).toBe(true);
 });
 
-test('submit controller', async () => {
-  render(
-    <FormButton text="Submit Me"/>);
-  const button = screen.getByRole('button');
-  expect(button.textContent).toBe('Submit Me');
-});
+// test('submit controller', async () => {
+//   render(
+//     <FormButton text="Submit Me"/>);
+//   const button = screen.getByRole('button');
+//   expect(button.textContent).toBe('Submit Me');
+// });
 
 
   
