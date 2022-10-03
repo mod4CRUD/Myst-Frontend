@@ -1,6 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import { InputController, FormButton } from '../Forms/FormController.jsx';
 import useSearchForm from '../../hooks/use-search-form.js';
+import styles from './Search.css';
 
 
 export default function SearchForm({ onSubmit }) {
@@ -14,13 +15,13 @@ export default function SearchForm({ onSubmit }) {
   };
 
   return (<form onSubmit ={formSubmit}>
-    <InputController
+    <InputController className = {styles.InputController}
       type="text"
       name="pokemon"
       value={pokemon}
       onChange={e => setPokemon(e.target.value)}
     />
-    <FormButton type = "submit">
+    <FormButton className = {styles.FormButton} type = "submit">
         Search
     </FormButton>
   </form>);

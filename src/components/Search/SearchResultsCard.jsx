@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import styles from './Search.css';
 
 export default function SearchResultCard({ pokemon, infinScrollRef }) {

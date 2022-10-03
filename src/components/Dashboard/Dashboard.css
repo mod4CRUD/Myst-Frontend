@@ -1,11 +1,22 @@
 .Dashboard {
-    background: rgb(230, 1, 1);
-    background-color: gray;
-    display: flex;
-    gap: 20px;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: flex-end;
-    align-content: stretch;
-    flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  form {
+    padding: 20px;
+    width: 400px;
+    background: var(--light-accent-color);
+    box-shadow: var(--box-shadow);
+
+    display: grid;
+    gap: 10px;
   }
+
+  pre {
+    font-family: monospace;
+    line-height: 1.3;
+    background: white;
+    padding: 5px;
+  }
+}

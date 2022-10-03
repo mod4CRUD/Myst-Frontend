@@ -39,15 +39,25 @@
   }
   
   .FormButton {
+    display: flex;
     padding: 5px 10px;
     height: 40px;
     background: var(--button-color);
     border: 1px solid var(--header-color);
     cursor: pointer;
   
-    &.Icon {
-      font-size: 1.5em;
-    }
+  
+  }
+
+  .FormButton {
+    display: flex;
+    padding: 5px 10px;
+    height: 40px;
+    background: var(--button-color);
+    border: 1px solid var(--header-color);
+    cursor: pointer;
+  
+  
   }
   
   .CheckboxControl {
