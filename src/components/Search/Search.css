@@ -1,10 +1,13 @@
 .SearchResults {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    border: 100px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    
 }
 
-.SearchResultCard {
-    display: grid;
+.SearchResultCard img {
+    width: 100px;
+    height: 100px;
 }
+
+
 
