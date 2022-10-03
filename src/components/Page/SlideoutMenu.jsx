@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import Navigation from './Navigation.jsx';
-import styles from './SlideoutMenu.css';
+import styles from './SlideOutMenu.css';
 import classnames from 'classnames';
 
-export default function SlideoutMenu(navigation) {
+export default function SlideOutMenu(navigation) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const className = classnames(styles.SlideoutMenu, {
+  const className = classnames(styles.SlideOutMenu, {
     [styles.Open]: isOpen,
   });
 

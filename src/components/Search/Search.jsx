@@ -3,15 +3,13 @@ import SearchForm from './SearchForm.jsx';
 import SearchResults from './SearchResults.jsx';
 import useSearchResults from '../../hooks/use-search-results.js';
 import { FormButton } from '../Forms/FormController.jsx';
-import { search } from '../../services/pokedex.js';
+import { search } from '../../services/pokeDex.js';
 
 export default function Search() {
   const {
     infinScrollRef,
     nextPage,
-    // searchParams,
     searchResults,
-    // searchPokedex,
   } = useSearchResults();
 
 

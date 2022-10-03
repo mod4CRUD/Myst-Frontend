@@ -5,40 +5,22 @@ export default function Invoices() {
     <div>
       <h2>Invoices</h2>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Consequatur beatae cupiditate facilis hic? Enim ea, maiores
-        laudantium esse iure quae doloribus ab explicabo doloremque
-        vel culpa veniam possimus magni unde!
+        private Invoices
       </p>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Consequatur beatae cupiditate facilis hic? Enim ea, maiores
-        laudantium esse iure quae doloribus ab explicabo doloremque
-        vel culpa veniam possimus magni unde!
+      private Invoices
       </p>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Consequatur beatae cupiditate facilis hic? Enim ea, maiores
-        laudantium esse iure quae doloribus ab explicabo doloremque
-        vel culpa veniam possimus magni unde!
+      private Invoices
       </p>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Consequatur beatae cupiditate facilis hic? Enim ea, maiores
-        laudantium esse iure quae doloribus ab explicabo doloremque
-        vel culpa veniam possimus magni unde!
+      private Invoices
       </p>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Consequatur beatae cupiditate facilis hic? Enim ea, maiores
-        laudantium esse iure quae doloribus ab explicabo doloremque
-        vel culpa veniam possimus magni unde!
+      private Invoices
       </p>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Consequatur beatae cupiditate facilis hic? Enim ea, maiores
-        laudantium esse iure quae doloribus ab explicabo doloremque
-        vel culpa veniam possimus magni unde!
+      private Invoices
       </p>
       <a href="#top">Go to Top</a>
     </div>

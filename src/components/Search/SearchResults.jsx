@@ -1,4 +1,4 @@
-// import React from 'react';
+
 import SearchResultCard from './SearchResultsCard.jsx';
 import styles from './Search.css';
 
