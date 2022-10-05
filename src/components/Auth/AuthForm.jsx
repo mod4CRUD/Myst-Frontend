@@ -17,6 +17,8 @@ export default function AuthForm({ mode = 'signin' }) {
     await type.action(credentials);
   };
 
+
+
   const signin = {
     prompt: 'Sign into your account',
     button: 'Sign In',
