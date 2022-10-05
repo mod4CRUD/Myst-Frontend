@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../state/UserContext.jsx';
-import { InputControl, FormButton } from '../Forms/FormController.jsx';
+import { InputController, FormButton } from '../Forms/FormController.jsx';
 import { useForm } from '../Forms/useForm.js';
 
 import styles from './AuthForm.css';
@@ -44,7 +44,7 @@ export default function AuthForm({ mode = 'signin' }) {
     <form className={styles.AuthForm} onSubmit={handleSubmit}>
       <h2>{type.prompt}</h2>
 
-      <InputControl
+      <InputController
         label="Email"
         name="email"
         type="email"
@@ -53,7 +53,7 @@ export default function AuthForm({ mode = 'signin' }) {
         onChange={handleChange}
       />
 
-      <InputControl
+      <InputController
         label="Password"
         name="password"
         type="password"
