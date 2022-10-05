@@ -7,6 +7,9 @@ import styles from './Search.css';
 export default function SearchForm({ onSubmit }) {
   const { pokemon, setPokemon } = useSearchForm();
   
+  
+
+  
   const formSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
