@@ -77,6 +77,7 @@ export default function GameListProvider({ children }) {
   );
 }
 
+
 export function useGames() {
   const [error, setError] = useState(null);
   const { gameLists, setGameLists } = useContext(GameListContext);
@@ -113,24 +114,23 @@ export function useGame(id) {
       setError(null);
     }
   };
-}
-//Removes favorite from list
 
-const removeFavoriteGame = async (gameById) => {
-  const { error } = await deleteGame(id, gameById);
-  if (error) {
-    setError(error.message);
-  } else {
-    const updateFavList = {
-      ...games,
-      game: games.game.filter((game) => game.id !== gameById),
-    };
-    updateFavList(updateFavList);
-    setError(null);
-  }
-    
-    
-  return {
-    removeFavoriteGame, error, updateFavorites
+  const removeFavoriteGame = async (gameById) => {
+    const { error } = await deleteGame(id, gameById);
+    if (error) {
+      setError(error.message);
+    } else {
+      const updateFavList = {
+        ...gameById,
+        game: gameById.game.filter((game) => game.id !== gameById),
+      };
+      updateFavList(updateFavList);
+      setError(null);
+    }
   };
-};
+      
+      
+  return {
+    removeFavoriteGame, error, updateFavorites, addFavoriteGame
+  };
+}
