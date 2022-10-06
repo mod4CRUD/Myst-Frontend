@@ -40,7 +40,7 @@ export default function UserProvider({ children }) {
 
 export function useAuth() {
   const [error, setError] = useState(null);
-  const { setUser } = useContext(UserContext);
+  const setUser = useContext(UserContext);
   const handleResponse = ({ user, error }) => {
     if (error) {
       console.log(error);
