@@ -4,7 +4,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import Dashboard from './components/Dashboard/Dashboard.jsx';
+// import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Layout from './components/Page/Layout.jsx';
 import Customers from './components/Sales/Customers.jsx';
 import Deposits from './components/Sales/Deposits.jsx';
@@ -23,7 +23,8 @@ export default function App() {
 
         <Routes>
           <Route element={<Layout />}>
-            <Route index element={<Dashboard />} />
+            <Route index element={<AuthForm mode="signin" />} />
+            <Route path="signUp" element={<AuthForm mode="signup" />} />
             <Route path="users" element={<Users />} />
             {/* <Route path="search" element={<Search />}/> */}
             <Route path="sales" element={<Sales />}>
@@ -33,10 +34,10 @@ export default function App() {
             </Route>
           </Route>
 
-          <Route path="auth" element={<Auth />}>
+          {/* <Route path="auth" element={<Auth />}>
             <Route index element={<AuthForm mode="signin" />} />
-            <Route path="signUp" element={<AuthForm mode="signup" />} />
-          </Route>
+            <Route path="signUp" element={<AuthForm mode="signp" />} />
+          </Route> */}
   
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
