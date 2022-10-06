@@ -42,6 +42,7 @@ export default function AuthForm({ mode = 'signin' }) {
   const modes = { signin, signup };
   const type = modes[mode];
 
+
   return (
     <form className={styles.AuthForm} onSubmit={handleSubmit}>
       <h2>{type.prompt}</h2>

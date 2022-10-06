@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { signInUser, signOutUser, signUpUser, getLocalUser, verifyUser, storeLocalUser } from '../services/auth.js';
 
 const UserContext = createContext();
+
 export default function UserProvider({ children }) {
   const localUser = getLocalUser();
   const [user, setUserState] = useState(localUser);
@@ -40,7 +41,7 @@ export default function UserProvider({ children }) {
 
 export function useAuth() {
   const [error, setError] = useState(null);
-  const setUser = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const handleResponse = ({ user, error }) => {
     if (error) {
       console.log(error);

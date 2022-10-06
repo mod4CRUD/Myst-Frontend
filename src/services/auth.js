@@ -1,6 +1,7 @@
 import { del, get, post } from './request.js';
 
 const URL = '/api/v1/auth';
+//this is where the routes need to match with the BE 'aka api/v1/users
 
 
 export async function signUpUser(credentials) {

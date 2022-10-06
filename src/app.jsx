@@ -13,30 +13,35 @@ import Sales from './components/Sales/Sales.jsx';
 import Users from './components/Users/Users.jsx';
 import Auth from './components/Auth/Auth.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
+import UserProvider from './state/UserContext.jsx';
 // import Search from './components/Search/Search.jsx';
   
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="users" element={<Users />} />
-          {/* <Route path="search" element={<Search />}/> */}
-          <Route path="sales" element={<Sales />}>
-            <Route index element={<Deposits />} />
-            <Route path="invoices" element={<Invoices />} />
-            <Route path="customers" element={<Customers />} />
+      <UserProvider>
+
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="users" element={<Users />} />
+            {/* <Route path="search" element={<Search />}/> */}
+            <Route path="sales" element={<Sales />}>
+              <Route index element={<Deposits />} />
+              <Route path="invoices" element={<Invoices />} />
+              <Route path="customers" element={<Customers />} />
+            </Route>
           </Route>
-        </Route>
+
+          <Route path="auth" element={<Auth />}>
+            <Route index element={<AuthForm mode="signin" />} />
+            <Route path="signUp" element={<AuthForm mode="signup" />} />
+          </Route>
   
-        <Route path="auth" element={<Auth />}>
-          <Route index element={<AuthForm mode="signIn" />} />
-          <Route path="signUp" element={<AuthForm mode="signUp" />} />
-        </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </UserProvider>
   
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
     </Router>
   );
 }
