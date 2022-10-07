@@ -5,13 +5,13 @@ const URL = 'https://myst-backend.herokuapp.com/api/v1/users';
 
 
 export async function insert(credentials) {
-  const response = await post(`${URL}/signup`, credentials);
+  const response = await post(`${URL}`, credentials);
   response.user = response.data;
   return response;
 }
 
 export async function getByEmail(credentials) {
-  const response = await post(`${URL}/signin`, credentials);
+  const response = await post(`${URL}`, credentials);
   response.user = response.data;
   return response;
 }
