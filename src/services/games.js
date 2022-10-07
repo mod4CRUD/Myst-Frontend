@@ -1,6 +1,6 @@
 import { del, get, post, put } from './request.js';
 
-const URL = '/api/v1/games';
+const URL = 'https://myst-backend.herokuapp.com/api/v1/games';
 //this is where the routes need to match with the BE 'aka api/v1/users
 
 export async function getGamesList() {
@@ -23,6 +23,6 @@ export async function updateFavorites(gameId, gameList, updates) {
   return await put(`${URL}/${gameId}/games/${gameList}`, updates);
 }
 
-export async function searchGames(gameObj) {
-  return await get()
-}
+// export async function searchGames(gameObj) {
+//   return await get();
+// }

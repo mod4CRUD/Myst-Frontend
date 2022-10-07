@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 // eslint-disable-next-line max-len
-import { signInUser, signOutUser, signUpUser, getLocalUser, verifyUser, storeLocalUser } from '../services/auth.js';
+import { getByEmail, signOutUser, insert, getLocalUser, verifyUser, storeLocalUser } from '../services/auth.js';
 
 const UserContext = createContext();
 
@@ -53,12 +53,12 @@ export function useAuth() {
   };
 
   const signUp = async (credentials) => {
-    const response = await signUpUser(credentials);
+    const response = await insert(credentials);
     handleResponse(response);
   };
 
   const signIn = async (credentials) => {
-    const response = await signInUser(credentials);
+    const response = await getByEmail(credentials);
     handleResponse(response);
   };
 

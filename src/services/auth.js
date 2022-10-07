@@ -1,16 +1,16 @@
 import { del, get, post } from './request.js';
 
-const URL = '/api/v1/users';
+const URL = 'https://myst-backend.herokuapp.com/api/v1/users';
 //this is where the routes need to match with the BE 'aka api/v1/users
 
 
-export async function signUpUser(credentials) {
+export async function insert(credentials) {
   const response = await post(`${URL}/signup`, credentials);
   response.user = response.data;
   return response;
 }
 
-export async function signInUser(credentials) {
+export async function getByEmail(credentials) {
   const response = await post(`${URL}/signin`, credentials);
   response.user = response.data;
   return response;
