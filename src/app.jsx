@@ -10,7 +10,7 @@ import Users from './components/Users/Users.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
 import UserProvider from './state/UserContext.jsx';
 // import Search from './components/Search/Search.jsx';
-import GameListProvider from './state/GameContext.jsx';
+// import GameListProvider from './state/GameContext.jsx';
   
 export default function App() {
   return (
