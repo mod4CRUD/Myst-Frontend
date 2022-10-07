@@ -22,3 +22,7 @@ export async function deleteGame(gameId, gameList) {
 export async function updateFavorites(gameId, gameList, updates) {
   return await put(`${URL}/${gameId}/games/${gameList}`, updates);
 }
+
+export async function searchGames(gameObj) {
+  return await get()
+}

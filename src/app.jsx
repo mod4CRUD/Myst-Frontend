@@ -4,34 +4,25 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-// import Dashboard from './components/Dashboard/Dashboard.jsx';
+import Profile from './components/Page/Profile.jsx';
 import Layout from './components/Page/Layout.jsx';
-// import Customers from './components/Sales/Customers.jsx';
-// import Deposits from './components/Sales/Deposits.jsx';
-// import Invoices from './components/Sales/Invoices.jsx';
-// import Sales from './components/Sales/Sales.jsx';
 import Users from './components/Users/Users.jsx';
-// import Auth from './components/Auth/Auth.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
 import UserProvider from './state/UserContext.jsx';
 // import Search from './components/Search/Search.jsx';
+import GameListProvider from './state/GameContext.jsx';
   
 export default function App() {
   return (
     <Router>
       <UserProvider>
-
+        {/* <GameListProvider> */}
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<AuthForm mode="signin" />} />
             <Route path="signUp" element={<AuthForm mode="signup" />} />
             <Route path="users" element={<Users />} />
-            {/* <Route path="search" element={<Search />}/> */}
-            {/* <Route path="sales" element={<Sales />}>
-              <Route index element={<Deposits />} />
-              <Route path="invoices" element={<Invoices />} />
-              <Route path="customers" element={<Customers />} />
-            </Route> */}
+            <Route path="profile" element={<Profile />}/>
           </Route>
 
           {/* <Route path="auth" element={<Auth />}>
@@ -41,6 +32,7 @@ export default function App() {
   
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        {/* </GameListProvider> */}
       </UserProvider>
   
     </Router>

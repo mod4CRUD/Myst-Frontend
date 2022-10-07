@@ -1,6 +1,6 @@
 import { del, get, post } from './request.js';
 
-const URL = '/api/v1/auth';
+const URL = '/api/v1/users';
 //this is where the routes need to match with the BE 'aka api/v1/users
 
 
@@ -22,7 +22,7 @@ export async function signOutUser() {
 }
 
 export async function verifyUser() {
-  const response = await get(`${URL}/verify`);
+  const response = await get(`${URL}/me`);
   response.user = response.data;
   return response;
 }

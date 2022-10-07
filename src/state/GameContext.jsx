@@ -16,9 +16,10 @@ import {
 
 const GameListContext = createContext();
 
-export default function GameListProvider({ children }) {
-  const [gameList, setGameList] = useState(null);
+export default function GameListProvider() {
+  const [gameLists, setGameLists] = useState([]);
   const [gameById, setGameById] = useState({});
+
 
   //show all catalog
   const fetchGameList = async () => {
@@ -28,7 +29,7 @@ export default function GameListProvider({ children }) {
       console.log(error);
     } 
     if (data) {
-      setGameList(data);
+      setGameLists(data);
       const map = data.reduce((map, gameList) => {
         map[gameList.id] = gameList;
         return map;
@@ -42,7 +43,7 @@ export default function GameListProvider({ children }) {
   }, []);
   //adds to the game catalogue
   const addGame = (gameList) => {
-    setGameList((gameLists) => [...gameLists, gameList]);
+    setGameLists((gameLists) => [...gameLists, gameList]);
     setGameById((gameById) => ({
       ...gameById, 
       [gameList.id]: gameList,
@@ -50,7 +51,7 @@ export default function GameListProvider({ children }) {
   };
 
   const updateFavorites = (update) => {
-    setGameList((gameLists) => 
+    setGameLists((gameLists) => 
       // eslint-disable-next-line max-len
       gameLists.map((gameList) => (gameList.id === update.id ? update : gameList))
     );
@@ -62,8 +63,8 @@ export default function GameListProvider({ children }) {
 
 
   const value = {
-    gameList,
-    setGameList,
+    gameLists,
+    setGameLists,
     gameById,
     setGameById,
     addGame,
@@ -72,7 +73,7 @@ export default function GameListProvider({ children }) {
 
   return (
     <GameListContext.Provider value={value}>
-      {children || <Outlet />}
+      <Outlet />
     </GameListContext.Provider>
   );
 }
@@ -127,10 +128,19 @@ export function useGame(id) {
       updateFavList(updateFavList);
       setError(null);
     }
-  };
-      
-      
+  };    
+
+
   return {
     removeFavoriteGame, error, updateFavorites, addFavoriteGame
   };
 }
+export function useSearchForm() {
+  const { gameLists, setGameLists } = useContext(GameListContext);
+    
+  return {
+    gameLists,
+    setGameLists,
+  };
+}
+
