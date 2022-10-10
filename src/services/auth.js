@@ -11,7 +11,7 @@ export async function insert(credentials) {
 }
 
 export async function getByEmail(credentials) {
-  const response = await post(`${URL}`, credentials);
+  const response = await get(`${URL}`, credentials);
   response.user = response.data;
   return response;
 }
@@ -21,8 +21,8 @@ export async function signOutUser() {
   return response;
 }
 
-export async function verifyUser() {
-  const response = await get(`${URL}/me`);
+export async function verifyUser(credentials) {
+  const response = await get(`${URL}/sessions`, credentials);
   response.user = response.data;
   return response;
 }
