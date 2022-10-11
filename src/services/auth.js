@@ -11,7 +11,7 @@ export async function insert(credentials) {
 }
 
 export async function getByEmail(credentials) {
-  const response = await get(`${URL}`, credentials);
+  const response = await post(`${URL}/sessions`, credentials);
   response.user = response.data;
   return response;
 }
@@ -22,7 +22,7 @@ export async function signOutUser() {
 }
 
 export async function verifyUser(credentials) {
-  const response = await get(`${URL}/sessions`, credentials);
+  const response = await get(`${URL}/me`, credentials);
   response.user = response.data;
   return response;
 }
